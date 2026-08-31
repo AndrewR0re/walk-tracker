@@ -1,13 +1,13 @@
-import AppBar from "@mui/material/AppBar";
-import Tab from "@mui/material/Tab";
-import Tabs from "@mui/material/Tabs";
-import Toolbar from "@mui/material/Toolbar";
-import { HeaderProps } from "../types/HeaderProps";
+import AppBar from '@mui/material/AppBar';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
+import Toolbar from '@mui/material/Toolbar';
+import { HeaderProps } from '../types/HeaderProps';
 
 export default function Header({ tabSelection, onChange }: HeaderProps) {
     return (
         <AppBar
-            position="static"
+            position='static'
             color="primary"
         >
             <Toolbar>
@@ -15,11 +15,11 @@ export default function Header({ tabSelection, onChange }: HeaderProps) {
                     value={tabSelection}
                     onChange={onChange}
                     centered
-                    textColor="secondary"
-                    indicatorColor="secondary"
+                    textColor='secondary'
+                    indicatorColor='secondary'
                 >
-                    <Tab label="Walks" />
-                    <Tab label="Munros" />
+                    <Tab label='Walks' />
+                    <Tab label='Munros' />
                 </Tabs>
             </Toolbar>
         </AppBar>

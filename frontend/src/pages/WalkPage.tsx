@@ -1,11 +1,16 @@
-import Box from "@mui/material/Box"
-import Walk from "../components/Walk.js"
+import { useEffect, useState } from 'react'
+import Box from '@mui/material/Box'
+import Walk from '../components/Walk.js'
+import { WalkProps } from '../types/Walk.types';
 
 export default function WalkPage() {
-    const walks = [
-        { name: 'Alyth Den', date: '24/08/2026' },
-        { name: 'Kinpurney Hill', date: '25/08/2026' }
-    ]
+    const [walks, setWalks] = useState<WalkProps[]>([]);
+
+    useEffect(() => {
+        fetch('/api/walks')
+            .then(res => res.json())
+            .then(data => setWalks(data));
+    }, []);
 
     return (
         <Box
