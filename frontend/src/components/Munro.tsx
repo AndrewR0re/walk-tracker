@@ -19,7 +19,7 @@ export default function Munro({ name, altitude, date }: MunroProps) {
                         Altitude: {altitude} feet / {convertFeetToMeters(altitude)} meters
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Climbed on: {date}
+                        Summited on: {date}
                     </Typography>
                 </CardContent>
             </Card>
