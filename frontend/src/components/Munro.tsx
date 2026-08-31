@@ -5,9 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
 export default function Munro({ name, altitude, date }: MunroProps) {
-    const convertFeetToMeters = (feet: number) => {
-        const meters = feet / 3.28084;
-        return Number(meters.toFixed(2));
+    const convertMetresToFeet = (metres: number) => {
+        const feet = metres * 3.28084;
+        return Number(feet.toFixed(2));
     }
     
     return (
@@ -16,7 +16,7 @@ export default function Munro({ name, altitude, date }: MunroProps) {
                 <CardContent>
                     <Typography variant='h5'>{name}</Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Altitude: {altitude} feet / {convertFeetToMeters(altitude)} metres
+                        Altitude: {altitude} metres / {convertMetresToFeet(altitude)} feet
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
                         Summited on: {date}
