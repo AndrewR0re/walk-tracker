@@ -16,7 +16,7 @@ export default function Munro({ name, altitude, date }: MunroProps) {
                 <CardContent>
                     <Typography variant='h5'>{name}</Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Altitude: {altitude} feet / {convertFeetToMeters(altitude)} meters
+                        Altitude: {altitude} feet / {convertFeetToMeters(altitude)} metres
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
                         Summited on: {date}
