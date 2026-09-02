@@ -1,8 +1,4 @@
 import { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import WalkPage from './pages/WalkPage.tsx';
 import MunroPage from './pages/MunroPage.tsx';

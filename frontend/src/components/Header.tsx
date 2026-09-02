@@ -2,7 +2,11 @@ import AppBar from '@mui/material/AppBar';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Toolbar from '@mui/material/Toolbar';
-import { HeaderProps } from '../types/HeaderProps';
+
+interface HeaderProps {
+    tabSelection: number;
+    onChange: (event: React.SyntheticEvent, newValue: number) => void;
+}
 
 export default function Header({ tabSelection, onChange }: HeaderProps) {
     return (

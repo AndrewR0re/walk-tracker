@@ -1,5 +1,4 @@
-export interface MunroProps {
+export interface Munro {
     name: string;
     altitude: number;
-    date: string;
 }

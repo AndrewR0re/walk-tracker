@@ -1,42 +1,32 @@
 import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
-import Munro from '../components/Munro.js'
-import { MunroProps } from '../types/Munro.types.js'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import MunroCard from '../components/MunroCard.js'
+import { MunroClimb } from '../types/MunroClimb.types.ts';
+import MunroProgressCard from '../components/MunroProgressCard.tsx';
 
 export default function MunroPage() {
 
-    const [munros, setMunros] = useState<MunroProps[]>([]);
+    const [munroClimbs, setMunroClimbs] = useState<MunroClimb[]>([]);
 
     useEffect(() => {
-        fetch('/api/munros')
+        fetch('/api/climb/munro')
             .then(res => res.json())
-            .then(data => setMunros(data));
+            .then(data => setMunroClimbs(data));
     }, []);
-
-    const completionPercentage = () => {
-        const completionPercentage = ((munros.length / 282) * 100);
-        return Number(completionPercentage.toFixed(2));
-    }
 
     return (
         <Box
             sx={{ p: 2 }}
         >
-            <Card sx={{ width: '100%' }}>
-                <CardContent>
-                    <Typography variant='body1' color='text.secondary'>
-                        {munros.length} of 282 summited
-                    </Typography>
-                    <Typography>
-                        {completionPercentage()}%
-                    </Typography>
-                </CardContent>
-            </Card>
-            {munros.map((m, i) => (
-                <Munro key={i} name={m.name} altitude={m.altitude} date={m.date} />
+            <MunroProgressCard
+                climbs={munroClimbs}
+            />
+            {munroClimbs.map((climb, i) => (
+                <MunroCard
+                    key={i}
+                    munro={climb.munro}
+                    date={climb.date}
+                />
             ))}
         </Box>
     )
