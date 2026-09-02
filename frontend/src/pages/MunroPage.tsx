@@ -6,12 +6,12 @@ import MunroProgressCard from '../components/MunroProgressCard.tsx';
 
 export default function MunroPage() {
 
-    const [munroClimbs, setMunroClimbs] = useState<MunroClimb[]>([]);
+    const [climbs, setClimbs] = useState<MunroClimb[]>([]);
 
     useEffect(() => {
         fetch('/api/climb/munro')
             .then(res => res.json())
-            .then(data => setMunroClimbs(data));
+            .then(data => setClimbs(data));
     }, []);
 
     return (
@@ -19,9 +19,9 @@ export default function MunroPage() {
             sx={{ p: 2 }}
         >
             <MunroProgressCard
-                climbs={munroClimbs}
+                climbs={climbs}
             />
-            {munroClimbs.map((climb, i) => (
+            {climbs.map((climb, i) => (
                 <MunroCard
                     key={i}
                     munro={climb.munro}
