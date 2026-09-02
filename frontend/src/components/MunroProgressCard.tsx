@@ -1,10 +1,10 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { MunroClimb } from "../types/MunroClimb.types";
+import { ClimbedMunro } from "../types/ClimbedMunro.types";
 
 interface MunroProgressCardProps {
-    climbs: MunroClimb[]
+    climbs: ClimbedMunro[]
 }
 
 export default function MunroProgressCard({ climbs }: MunroProgressCardProps) {

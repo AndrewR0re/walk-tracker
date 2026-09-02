@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
 import MunroCard from '../components/MunroCard.js'
-import { MunroClimb } from '../types/MunroClimb.types.ts';
+import { ClimbedMunro } from '../types/ClimbedMunro.types.ts';
 import MunroProgressCard from '../components/MunroProgressCard.tsx';
 
 export default function MunroPage() {
 
-    const [climbs, setClimbs] = useState<MunroClimb[]>([]);
+    const [climbs, setClimbs] = useState<ClimbedMunro[]>([]);
 
     useEffect(() => {
         fetch('/api/climb/munro')

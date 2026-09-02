@@ -1,6 +1,6 @@
 import { Munro } from "./Munro.types";
 
-export interface MunroClimb {
+export interface ClimbedMunro {
     date: string,
     munro: Munro
 }
