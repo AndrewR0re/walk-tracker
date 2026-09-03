@@ -1,4 +1,6 @@
+import { WalkRoute } from "./WalkRoute.types";
+
 export interface Walk {
-    name: string;
-    length: number;
+    date: string,
+    walkRoute: WalkRoute
 }

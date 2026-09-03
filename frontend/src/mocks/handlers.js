@@ -8,7 +8,7 @@ export const handlers = [
             {
                 id: 1,
                 date: '01/08/2026',
-                walk: {
+                walkRoute: {
                     name: 'Alyth Den',
                     length: 100
                 }
@@ -16,7 +16,7 @@ export const handlers = [
             {
                 id: 2,
                 date: '02/08/2026',
-                walk: {
+                walkRoute: {
                     name: 'Kinpurney Hill',
                     length: 101
                 }
@@ -24,7 +24,7 @@ export const handlers = [
             {
                 id: 3,
                 date: '03/08/2026',
-                walk: {
+                walkRoute: {
                     name: 'Lundie Crags',
                     length: 102
                 }
