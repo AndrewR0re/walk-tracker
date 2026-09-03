@@ -1,16 +1,16 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { ClimbedMunro } from "../types/ClimbedMunro.types";
+import { Climb } from "../types/Climb.types";
 
-interface MunroProgressCardProps {
-    climbs: ClimbedMunro[]
+interface HillProgressCardProps {
+    totalCompletedHills: number,
+    totalHills: number,
 }
 
-export default function MunroProgressCard({ climbs }: MunroProgressCardProps) {
-
+export default function HillProgressCard({ totalHills, totalCompletedHills }: HillProgressCardProps) {
     const completionPercentage = () => {
-        const completionPercentage = ((climbs.length / 282) * 100);
+        const completionPercentage = ((totalCompletedHills / totalHills) * 100);
         return Number(completionPercentage.toFixed(2));
     }
 
@@ -18,7 +18,7 @@ export default function MunroProgressCard({ climbs }: MunroProgressCardProps) {
         <Card sx={{ width: '100%' }}>
             <CardContent>
                 <Typography variant='body1' color='text.secondary'>
-                    {climbs.length} of 282 summited
+                    {totalCompletedHills} of {totalHills} summited generic
                 </Typography>
                 <Typography>
                     {completionPercentage()}%

@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
-import Walk from '../components/Walk.js'
-import { WalkProps } from '../types/Walk.types';
+import WalkCard from '../components/WalkCard.js'
+import { CompletedWalk } from '../types/CompletedWalk.types';
 
 export default function WalkPage() {
-    const [walks, setWalks] = useState<WalkProps[]>([]);
+    const [walks, setWalks] = useState<CompletedWalk[]>([]);
 
     useEffect(() => {
-        fetch('/api/walks')
+        fetch('/api/walk')
             .then(res => res.json())
             .then(data => setWalks(data));
     }, []);
@@ -17,7 +17,7 @@ export default function WalkPage() {
             sx={{ p: 2 }}
         >
             {walks.map((w, i) => (
-                <Walk key={i} name={w.name} date={w.date}></Walk>
+                <WalkCard key={i} walk={w.walk} date={w.date}></WalkCard>
             ))}
         </Box>
     )

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import Box from '@mui/material/Box'
-import MunroCard from '../components/MunroCard.js'
 import { Climb } from '../types/Climb.types.ts';
+import GrahamCard from '../components/GrahamCard.tsx';
 import HillProgressCard from '../components/HillProgressCard.tsx';
 
-export default function MunroPage() {
+export default function GrahamPage() {
 
     const [climbs, setClimbs] = useState<Climb[]>([]);
 
     useEffect(() => {
-        fetch('/api/climb?type=munro')
+        fetch('/api/climb?type=graham')
             .then(res => res.json())
             .then(data => setClimbs(data));
     }, []);
@@ -19,13 +19,13 @@ export default function MunroPage() {
             sx={{ p: 2 }}
         >
             <HillProgressCard
-                totalHills={282}
+                totalHills={231}
                 totalCompletedHills={climbs.length}
             />
             {climbs.map((climb, i) => (
-                <MunroCard
+                <GrahamCard
                     key={i}
-                    munro={climb.hill}
+                    graham={climb.hill}
                     date={climb.date}
                 />
             ))}

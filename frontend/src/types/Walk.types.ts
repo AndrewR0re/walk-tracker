@@ -1,4 +1,4 @@
-export interface WalkProps {
+export interface Walk {
     name: string;
-    date: string;
+    length: number;
 }
