@@ -1,7 +1,7 @@
 export interface Climb {
     id: number,
     date: string,
-    type: 'munro' | 'corbett' | 'graham',
+    type: 'munro' | 'graham',
     hill: {
         name: string,
         altitude: number
