@@ -18,7 +18,7 @@ export default function HillProgressCard({ totalHills, totalCompletedHills }: Hi
         <Card sx={{ width: '100%' }}>
             <CardContent>
                 <Typography variant='body1' color='text.secondary'>
-                    {totalCompletedHills} of {totalHills} summited generic
+                    {totalCompletedHills} of {totalHills} summited
                 </Typography>
                 <Typography>
                     {completionPercentage()}%
