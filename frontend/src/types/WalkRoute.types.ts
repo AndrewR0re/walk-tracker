@@ -1,4 +1,5 @@
 export interface WalkRoute {
+    id: number;
     name: string;
-    length: number;
+    distanceMetres: number;
 }

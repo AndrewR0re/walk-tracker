@@ -1,4 +1,5 @@
 export interface Munro {
+    id: number;
     name: string;
-    altitude: number;
+    altitudeMetres: number;
 }

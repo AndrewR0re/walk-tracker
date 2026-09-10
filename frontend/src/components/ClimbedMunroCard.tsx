@@ -1,15 +1,15 @@
 import Box from '@mui/material/Box';
+import { Munro } from '../types/Munro.types';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Graham } from '../types/Graham.types';
 
-interface GrahamCardProps {
-    graham: Graham,
-    date: string
+interface ClimbedMunroCardProps {
+    munro: Munro,
+    climbedDate: string
 }
 
-export default function GrahamCard({ graham, date }: GrahamCardProps) {
+export default function ClimbedMunroCard({ munro, climbedDate }: ClimbedMunroCardProps) {
     const convertMetresToFeet = (metres: number) => {
         const feet = metres * 3.28084;
         return Number(feet.toFixed(2));
@@ -19,12 +19,12 @@ export default function GrahamCard({ graham, date }: GrahamCardProps) {
         <Box sx={{ width: '100%', pt: 2 }}>
             <Card sx={{ width: '100%' }}>
                 <CardContent>
-                    <Typography variant='h5'>{graham.name}</Typography>
+                    <Typography variant='h5'>{munro.name}</Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Altitude: {graham.altitude} metres / {convertMetresToFeet(graham.altitude)} feet
+                        Altitude: {munro.altitudeMetres} metres / {convertMetresToFeet(munro.altitudeMetres)} feet
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Summited on: {date}
+                        Summited on: {climbedDate}
                     </Typography>
                 </CardContent>
             </Card>

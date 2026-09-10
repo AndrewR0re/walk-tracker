@@ -8,12 +8,14 @@ import env from './lib/EnvReader.tsx';
 
 const useMockServiceWorker = (env.isEnabled('USE_MSW'));
 
-if (import.meta.env.DEV && useMockServiceWorker) {
-  const { worker } = await import('./mocks/browser');
-  await worker.start({
-    onUnhandledRequest: 'bypass'
-  });
+async function waitForMswStart() {
+  if (import.meta.env.DEV && useMockServiceWorker) {
+    const { worker } = await import('./mocks/browser');
+    await worker.start();
+  }
 }
+
+await waitForMswStart();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

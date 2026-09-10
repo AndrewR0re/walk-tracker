@@ -16,8 +16,12 @@ export default function WalkPage() {
         <Box
             sx={{ p: 2 }}
         >
-            {walks.map((w, i) => (
-                <WalkCard key={i} walkRoute={w.walkRoute} date={w.date}></WalkCard>
+            {walks.map((w) => (
+                <WalkCard 
+                    key={w.id} 
+                    walkRoute={w.walkRoute} 
+                    walkDate={w.walkDate}
+                />
             ))}
         </Box>
     )

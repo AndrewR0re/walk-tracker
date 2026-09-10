@@ -6,20 +6,20 @@ import { WalkRoute } from '../types/WalkRoute.types';
 
 interface WalkCardProps {
     walkRoute: WalkRoute,
-    date: string
+    walkDate: string
 }
 
-export default function WalkCard({ walkRoute, date }: WalkCardProps) {
+export default function WalkCard({ walkRoute, walkDate }: WalkCardProps) {
     return (
         <Box sx={{ width: '100%', pt: 2 }}>
             <Card sx={{ width: '100%' }}>
                 <CardContent>
                     <Typography variant='h5'>{walkRoute.name}</Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Completed on: {date}
+                        Completed on: {walkDate}
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Length: {walkRoute.length} metres
+                        Length: {walkRoute.distanceMetres} metres
                     </Typography>
                 </CardContent>
             </Card>

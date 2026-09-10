@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import WalkPage from './pages/WalkPage.tsx';
-import MunroPage from './pages/MunroPage.tsx';
-import GrahamPage from './pages/GrahamPage.tsx';
+import MunroPage from './pages/ClimbedMunroPage.tsx';
 import Header from './components/Header.tsx';
 
 export default function App() {
@@ -18,7 +17,6 @@ export default function App() {
 
       {tabSelection === 0 && <WalkPage />}
       {tabSelection === 1 && <MunroPage />}
-      {tabSelection === 2 && <GrahamPage/>}
     </Box>
   )
 }

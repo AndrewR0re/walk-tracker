@@ -24,7 +24,6 @@ export default function Header({ tabSelection, onChange }: HeaderProps) {
                 >
                     <Tab label='Walks' />
                     <Tab label='Munros' />
-                    <Tab label='Grahams' />
                 </Tabs>
             </Toolbar>
         </AppBar>
