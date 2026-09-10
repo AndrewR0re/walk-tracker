@@ -14,17 +14,20 @@ export default function ClimbedMunroCard({ munro, climbedDate }: ClimbedMunroCar
         const feet = metres * 3.28084;
         return Number(feet.toFixed(2));
     }
-    
+
     return (
         <Box sx={{ width: '100%', pt: 2 }}>
             <Card sx={{ width: '100%' }}>
                 <CardContent>
                     <Typography variant='h5'>{munro.name}</Typography>
                     <Typography variant='body1' color='text.secondary'>
+                        Summited on: {climbedDate}
+                    </Typography>
+                    <Typography variant='body1' color='text.secondary'>
                         Altitude: {munro.altitudeMetres} metres / {convertMetresToFeet(munro.altitudeMetres)} feet
                     </Typography>
                     <Typography variant='body1' color='text.secondary'>
-                        Summited on: {climbedDate}
+                        Region: {munro.region}
                     </Typography>
                 </CardContent>
             </Card>

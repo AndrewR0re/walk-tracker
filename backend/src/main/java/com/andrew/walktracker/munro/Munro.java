@@ -11,5 +11,6 @@ public class Munro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    private String region;
     private int altitudeMetres;
 }
