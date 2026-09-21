@@ -1,0 +1,15 @@
+# IntelliJ
+.idea/
+
+# Java / Gradle
+backend/build/
+backend/out/
+backend/.gradle/
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+
+# OS junk
+.DS_Store
+Thumbs.db
