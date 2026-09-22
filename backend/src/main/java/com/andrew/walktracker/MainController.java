@@ -4,6 +4,7 @@ import com.andrew.walktracker.climbedMunro.ClimbedMunro;
 import com.andrew.walktracker.service.ClimbService;
 import com.andrew.walktracker.walk.Walk;
 import com.andrew.walktracker.service.WalkService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,5 +31,10 @@ public class MainController {
     @GetMapping("/climbedMunro")
     public List<ClimbedMunro> getClimbedMunros() {
         return climbService.getAllClimbedMunros();
+    }
+
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("Walktracker API is up and running!");
     }
 }
