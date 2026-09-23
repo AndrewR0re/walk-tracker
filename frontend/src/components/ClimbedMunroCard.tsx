@@ -3,6 +3,9 @@ import { Munro } from '../types/Munro.types';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import CardHeaderActions from './CardHeaderActions';
+import EditClimbedMunroButton from './EditClimbedMunroButton';
+import DeleteClimbedMunroButton from './DeleteClimbedMunroButton';
 
 interface ClimbedMunroCardProps {
     munro: Munro,
@@ -17,8 +20,12 @@ export default function ClimbedMunroCard({ munro, climbedDate }: ClimbedMunroCar
 
     return (
         <Box sx={{ width: '100%', pt: 2 }}>
-            <Card sx={{ width: '100%' }}>
-                <CardContent>
+            <Card sx={{ width: '100%', position: 'relative' }}>
+                <CardHeaderActions>
+                    <EditClimbedMunroButton />
+                    <DeleteClimbedMunroButton />
+                </CardHeaderActions>
+                <CardContent sx={{ pr: 8 }}>
                     <Typography variant='h5'>{munro.name}</Typography>
                     <Typography variant='body1' color='text.secondary'>
                         Summited on: {climbedDate}

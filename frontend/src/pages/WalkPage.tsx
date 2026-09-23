@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box'
-import WalkCard from '../components/WalkCard.js'
-import { Walk } from '../types/Walk.types.js';
-import { useWalks } from '../hooks/useWalks.js';
+import WalkCard from '../components/WalkCard'
+import { Walk } from '../types/Walk.types';
+import { useWalks } from '../hooks/useWalks';
 
 export default function WalkPage() {
     const { walks, loading, error } = useWalks();

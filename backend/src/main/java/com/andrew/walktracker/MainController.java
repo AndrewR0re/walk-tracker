@@ -5,9 +5,7 @@ import com.andrew.walktracker.service.ClimbService;
 import com.andrew.walktracker.walk.Walk;
 import com.andrew.walktracker.service.WalkService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +29,12 @@ public class MainController {
     @GetMapping("/climbedMunro")
     public List<ClimbedMunro> getClimbedMunros() {
         return climbService.getAllClimbedMunros();
+    }
+
+    @DeleteMapping("/climbedMunro/{id}")
+    public String deleteClimbedMunro(@PathVariable long id) {
+        climbService.deleteClimbedMunro(id);
+        return "Climbed Munro with ID " + id + " has been deleted.";
     }
 
     @GetMapping("/health")

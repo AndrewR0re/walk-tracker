@@ -10,6 +10,9 @@ const theme = createTheme({
         },
         secondary: {
             main: '#8B4513'
+        },
+        deleteButton: {
+            main: '#2E2E2E'
         }
     }
 });

@@ -18,4 +18,8 @@ public class ClimbService {
     public List<ClimbedMunro> getAllClimbedMunros() {
         return climbedMunroRepository.findAll();
     }
+
+    public void deleteClimbedMunro(long id) {
+        climbedMunroRepository.deleteById(id);
+    }
 }
